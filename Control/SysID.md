@@ -23,7 +23,7 @@ SysID is a built in feature in wpilib that allows us to effectively generate tun
 1. Open SysID by typing SysID into the your search bar (FLAG: WHAT SEARCH BAR?)
 2. Go to the generator tab and put your team number under team/IP 
 
-There are different modes for different mechanisms. For now, we will only focus on Drivetrain and [General Mechanism](#using-sysid-general-mechanism) sysID.
+There are different modes for different mechanisms. For now, we will only focus on [Drivetrain](#using-sysid-drivetrain) and [General Mechanism](#using-sysid-general-mechanism) sysID.
 
 ### Using SysID (General Mechanism)
 
