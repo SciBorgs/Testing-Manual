@@ -6,7 +6,7 @@ Unit testing is a method of testing blocks (or units) of code. JUnit is a common
 
 ## Setting up JUnit 5
 
-1. Add the following clauses to **build.gradle**:
+1. Add the following clauses to `build.gradle`:
     ```
     test {
         useJUnitPlatform()
