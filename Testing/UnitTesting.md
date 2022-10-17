@@ -1,3 +1,22 @@
+
+# Table of Contents
+
+- [Table of Contents](#table-of-contents)
+- [Technicals](#technicals)
+  - [Introduction](#introduction)
+  - [Setting up JUnit 5](#setting-up-junit-5)
+  - [Imports](#imports)
+  - [Structure](#structure)
+  - [Types of methods](#types-of-methods)
+  - [Annotations](#annotations)
+  - [Assertions and Assumptions](#assertions-and-assumptions)
+    - [Assertions](#assertions)
+    - [Assumptions](#assumptions)
+    - [AssumingThat](#assumingthat)
+  - [Sim](#sim)
+  - [Helpful links](#helpful-links)
+- [Procedures](#procedures)
+
 # Technicals
 
 ## Introduction
