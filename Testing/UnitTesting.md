@@ -14,8 +14,8 @@ Unit testing is a method of testing blocks (or units) of code. JUnit is a common
     ```
     ```
     dependencies {
-        testImplementation ‘org.junit.jupiter:junit-jupiter-api:5.8.1’ 
-        testRuntimeOnly ‘org.junit.jupiter:junit-jupiter-api:5.8.1’
+        testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+        testRuntimeOnly 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     }
     ```
 2. Instal VSC extension *Test Runner for Java*
