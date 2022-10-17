@@ -32,16 +32,16 @@ Unit testing is a method of testing blocks (or units) of code. JUnit is a common
     import org.junit.jupiter.api.*;
     ```
 3. Remember to import whatever file you're testing!
-4. Sim (**come back later**)
+4. Sim (**coming soon**)
 
 ## Structure
 
 1. Testing Classes
     - All testing code is written inside Testing Classes
-    - **add link to example**
+    - **link to example coming soon**
 2. Testing Suites
     - Testing Suites are sets of testing classes
-    - **add link to example**
+    - **link to example coming soon**
 
 ## Types of methods
 
@@ -186,7 +186,7 @@ The assumeThat method is a combination of an assertion and an assumption.
 
 ## Sim
 
-**COME BACK**
+**coming soon**
 
 ## Helpful links
 
@@ -195,3 +195,5 @@ The assumeThat method is a combination of an assertion and an assumption.
 3. [JUnit 5 API](https://junit.org/junit5/docs/5.0.1/api/)
 
 # Procedures
+
+**coming soon**
