@@ -1,7 +1,6 @@
 
 # Table of Contents
 
-- [Table of Contents](#table-of-contents)
 - [Technicals](#technicals)
   - [Introduction](#introduction)
   - [Setting up JUnit 5](#setting-up-junit-5)
