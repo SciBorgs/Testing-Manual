@@ -2,7 +2,7 @@
 - [Introduction](#introduction)
 - [Using SysID](#using-sysid)
 - [Using SysID (General Mechanism)](#using-sysid-general-mechanism)
-- [SysID for Drivetrain](#sysid-for-drivetrain)
+- [Using SysID (Drivetrain)](#using-sysid-drivetrain)
 - [Helpful links](#helpful-links)
 
 # Introduction
@@ -36,13 +36,13 @@ There are different modes for different mechanisms. For now, we will only focus 
 3. In loggers go to motor controllers. Set your motor controllers to Spark Max Brushless and choose which side of motors are inverted and for encoders use the encoder we are using whether it be CanCoders, Integrated Neos or whatever. Assuming we use swerve with CanCoders Invert one side of the cancoders
 5. For Gyro set the gyro to pigeon get the CAN ID and as of 2022/2023 we do 
     not have talons
-    6. Encoder Parameters, the counts per revolution on a CanCoder is 4096 Counts 
+6. Encoder Parameters, the counts per revolution on a CanCoder is 4096 Counts 
     Per Revolution and Gearing is just the gear ratio of where the encoder is mounted
-    7. Go to Logger and project parameters have mechanism as Drivetrain and Unit 
+7. Go to Logger and project parameters have mechanism as Drivetrain and Unit 
     Type as meters and set the Units Per Rotation as the circumfrence of the wheel
-    8. Set up your voltage parameters lower values more precise values but don't 
+8. Set up your voltage parameters lower values more precise values but don't 
     be afraid to go wild as long as you have a lot of space
-    9. Basically follow the rest of the steps from SysID for General Mechanisms
+9. Basically follow the rest of the steps from SysID for General Mechanisms
 
 # Helpful links
 
