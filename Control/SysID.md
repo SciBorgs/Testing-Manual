@@ -3,20 +3,15 @@
 
 ### Additional Info Can Be Found [Here](#https://docs.wpilib.org/en/stable/docs/software/pathplanning/system-identification/index.html)
 ## Table of Contents
-### 1. [What is SysID?](#what-is-SysID?)
-### 2. [Installing SysID](#installing-SysID)
-### 3. [How do you use SysID?](#how-do-you-use-sysid)
-### 4. [SysID for Drivetrain](#sysid-for-drivetrain)
+- [What is SysID?](#what-is-SysID?)
+- [How do you use SysID?](#how-do-you-use-sysid)
+- [SysID for Drivetrain](#sysid-for-drivetrain)
 
 ### What is SysID?
 
 SysID is a built in feature in wpilib that allows us to effectively generate tune PID [insert link when made] and SVA [insert link when made] values.
 
-(MORE SPECIFIC DESCRIPTION OF WHAT IT DOES)
-
-### Setting up SysID
-
-(Do you need to do anything for this?)
+(MORE SPECIFIC DESCRIPTION OF WHAT IT DOES?)
 
 ### Using SysID
 
