@@ -1,26 +1,24 @@
-# SciGuides Part 1 SysID
-
-
-### Additional Info Can Be Found [Here](#https://docs.wpilib.org/en/stable/docs/software/pathplanning/system-identification/index.html)
-## Table of Contents
-- [What is SysID?](#what-is-SysID?)
-- [How do you use SysID?](#how-do-you-use-sysid)
+# Table of Contents
+- [Introduction](#introduction)
+- [Using SysID](#using-sysid)
+- [Using SysID (General Mechanism)](#using-sysid-general-mechanism)
 - [SysID for Drivetrain](#sysid-for-drivetrain)
+- [Helpful links](#helpful-links)
 
-### What is SysID?
+# Introduction
 
 SysID is a built in feature in wpilib that allows us to effectively generate tune PID [insert link when made] and SVA [insert link when made] values.
 
 (MORE SPECIFIC DESCRIPTION OF WHAT IT DOES?)
 
-### Using SysID
+# Using SysID
 
 1. Open SysID by typing SysID into the your search bar (FLAG: WHAT SEARCH BAR?)
 2. Go to the generator tab and put your team number under team/IP 
 
 There are different modes for different mechanisms. For now, we will only focus on [Drivetrain](#using-sysid-drivetrain) and [General Mechanism](#using-sysid-general-mechanism) sysID.
 
-### Using SysID (General Mechanism)
+# Using SysID (General Mechanism)
 
 3. As of 2022/2023 (necessary?), for the motor controller section, set the motor controller to Spark Max (Brushless). Make sure to set motors to inverted when applicable!
 4. For the CAN ID put the ID found on the Spark Max connected to the motor of the mechanism you are testing. If there are multiple motors, press the plus to add more.
@@ -33,7 +31,7 @@ There are different modes for different mechanisms. For now, we will only focus 
 11. To analyze your data go to analyzer, select the sysID data from the folder you stored it in, run the analyzer and get the Feedback and Feedforward analysis. Note that Feedback will yield PID values and Feedforward will yield SVA values.
 12. You now have PID and SVA values!
 
-### Using SysID (Drivetrain)
+# Using SysID (Drivetrain)
 
 3. In loggers go to motor controllers. Set your motor controllers to Spark Max Brushless and choose which side of motors are inverted and for encoders use the encoder we are using whether it be CanCoders, Integrated Neos or whatever. Assuming we use swerve with CanCoders Invert one side of the cancoders
 5. For Gyro set the gyro to pigeon get the CAN ID and as of 2022/2023 we do 
@@ -46,5 +44,7 @@ There are different modes for different mechanisms. For now, we will only focus 
     be afraid to go wild as long as you have a lot of space
     9. Basically follow the rest of the steps from SysID for General Mechanisms
 
+# Helpful links
 
-    
+1. [WPILib SysID docs](https://docs.wpilib.org/en/stable/docs/software/pathplanning/system-identification/index.html)
+
