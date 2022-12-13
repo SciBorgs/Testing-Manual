@@ -36,7 +36,7 @@ Unit testing is a method of testing blocks (or units) of code. JUnit is a common
         testRuntimeOnly 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     }
     ```
-2. Instal VSC extension *Test Runner for Java*
+2. Instal VSC extension *Test Runner for Java* (**this isn't strictly necessary with wpilib, but i think it's nice. Should i remove it?**)
 3. Create path `src/test/java`. All tests should be at this address
 
 ## Imports
@@ -50,7 +50,14 @@ Unit testing is a method of testing blocks (or units) of code. JUnit is a common
     import org.junit.jupiter.api.*;
     ```
 3. Remember to import whatever file you're testing!
-4. Sim (**coming soon**)
+4. Sim:
+    ```
+    import edu.wpi.first.hal.HAL;
+    ```
+5. Also import whatever specific devices/sim devices that you need. The most common one you'll be using is CANSparkMax:
+    ```
+    import com.revrobotics.CANSparkMax;
+    ```
 
 ## Structure
 
@@ -60,6 +67,7 @@ Unit testing is a method of testing blocks (or units) of code. JUnit is a common
 2. Testing Suites
     - Testing Suites are sets of testing classes
     - **link to example coming soon**
+    - (**i don't think they are currently supported on vscode...**)
 
 ## Types of methods
 
@@ -131,7 +139,7 @@ There are many different types of methods to use inside of testing classes, and 
 10. `@DisplayName(name)`
     - Purpose
       - Goes before test methods
-      - The given name is displayed if the test fails
+      - The given name is displayed when the test runs
 11. `@RepeatedTest(# of repititions)`
     - Purpose
       - Goes before RepeatedTest methods
@@ -204,6 +212,56 @@ The assumeThat method is a combination of an assertion and an assumption.
 
 ## Sim
 
+Robot simulation is the primary method of testing robot code with unit tests. When there isn't a physical robot to test on, we can test subsystems using simulated motors and other sensors/actuators.
+
+### Setting Up Sim
+
+To set up Sim, this line should be included in the BeforeEach method:
+
+```
+AssertTrue(HAL.initialize(500, 0));
+```
+**is it ever useful to not have that be 500?**
+
+This line (launches sim? insert better explanation...).
+
+Please read the section on [simulated devices](insert-link-when-it-exists), because they are used in unit testing to make sure your code is acting the way you want it to.
+
+## Testable robot code
+
+There are a few practices that are necessary to take when writing robot code to ensure that it is easily testable.
+
+1. Returning devices
+    - Classes that are being tested should have public methods that return whatever information is necessary for testing classes to simulate/access their devices.
+    - For example, subsystems with a CanSparkMAX should generally have a method that returns that spark.
+
+(i can't think of anything else.... maybe i should integrate this into a different section. but honestly we'll probably think of more things)
+
+## Robot testing class structure (find better name)
+- static subsystem
+- class vars (can devices)
+
+## Limitations
+
+While unit testing is a great tool, there are some important limitations, especially when it comes to robot code.
+
+1. Sim Accuracy
+    - The first and most obvious limitation is that the tests can only be as accurate as sim is
+    - There's still a lot of information that you can get, but just because something works in sim, doesn't mean it'll work in the real world
+2. resetting shuffleboard...???
+    - this will likely be fixed with the next wpilib release se I'm not going to write about it
+
+## Running Tests
+
+There are two ways to run tests:
+
+- Running tests using *Test Runner for Java*:
+    - Either open the VSC testing tab and click run symbol, or go to any test or testing class and click on the little green/red symbol next to it
+- Running test using WPILib
+    - Run the Test Robot Code command from the WPILib menu
+
+## Examples
+
 **coming soon**
 
 ## Helpful links
@@ -211,7 +269,46 @@ The assumeThat method is a combination of an assertion and an assumption.
 1. [Official JUnit 5 user guide](https://junit.org/junit5/docs/current/user-guide/)
 2. [Other helpful JUnit 5 guide](https://www.baeldung.com/junit-5)
 3. [JUnit 5 API](https://junit.org/junit5/docs/5.0.1/api/)
+5. [WPILib unit testing docs](https://docs.wpilib.org/en/stable/docs/software/wpilib-tools/robot-simulation/unit-testing.html)
 
 # Procedures
 
 **coming soon**
+
+## When to use unit tests
+
+Every subsystem should have a testing class dedicated to it, where all of its functionality is tested (to whatever extent possible). (link to example)
+
+Each util classes should have a dedicated testing class as well. (link to example)
+
+Not all commands need testing classes, but for more complex commands such as auto routines, have a testing class is advisable. (link to example)
+
+For any class that is to be tested, it is the responsibility of the person who writing it to write the testing class. Ideally, that person would create the testing class when they create the class, and add tests as they add functionality to the class.
+
+## Java assert keyword
+
+As tempting as it may be, we do not use the java assert keyword for unit tests. It is practically the same as JUnit's AssertTrue in most ways, but there are a few key difference that make JUnit assertions a better choice:
+
+- Java assert statements are not always enabled, whereas, in the context of unit tests, JUnit assertions are
+- JUnit assertions have more options for methods
+    - While many of the assertions tha JUnit provides could be accomplished in slightly different ways using only the assert keyword (or AssertTrue), using different, specific assertions often makes code more concise and readable.
+    - Using more specific types of assertions also gets you more useful exceptions
+- If you're using specific JUnit assertions such as AssertEquals or AssertSame in some tests, it is better to be consistant, and always use JUnit assertions
+
+## Best practices
+
+There are some standards and practices that we try to stick to as a team:
+
+- delta
+    - Each testing class should have a final class variable called delta, who's value the some small double representing acceptable deviation
+    - This is generally written as ne-m
+- test naming
+    - insert conventions!
+- Repeated tests
+    - repeated tests should be use whenever the thing being tested has any significant amount of randomness or variability
+    - for example, (*insert good example*)
+- paramaterized tests
+    - whenever paramaterized tests can be used to reduce redundancy, they should
+    - for example, (*insert good example*)
+- error messages
+    - (currently not working great, but if i change that i'll add something here)
