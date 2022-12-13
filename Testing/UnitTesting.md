@@ -13,8 +13,17 @@
     - [Assumptions](#assumptions)
     - [AssumingThat](#assumingthat)
   - [Sim](#sim)
+  - [Testable robot code](#testable-robot-code)
+  - [Limitations](#limitations)
+  - [Running tests](#running-tests)
+  - [Example code](#example-code)
+    - [Class structure](#class-structure-write-after-you-have-examples)
   - [Helpful links](#helpful-links)
 - [Procedures](#procedures)
+  - [When to use unit tests](#when-to-use-unit-tests)
+  - [Java assert keyword](#java-assert-keyword)
+  - [Best practices](#best-practices)
+
 
 # Technicals
 
@@ -214,8 +223,6 @@ The assumeThat method is a combination of an assertion and an assumption.
 
 Robot simulation is the primary method of testing robot code with unit tests. When there isn't a physical robot to test on, we can test subsystems using simulated motors and other sensors/actuators.
 
-### Setting Up Sim
-
 To set up Sim, this line should be included in the BeforeEach method:
 
 ```
@@ -235,11 +242,7 @@ There are a few practices that are necessary to take when writing robot code to 
     - Classes that are being tested should have public methods that return whatever information is necessary for testing classes to simulate/access their devices.
     - For example, subsystems with a CanSparkMAX should generally have a method that returns that spark.
 
-(i can't think of anything else.... maybe i should integrate this into a different section. but honestly we'll probably think of more things)
-
-## Robot testing class structure (find better name)
-- static subsystem
-- class vars (can devices)
+(i can't think of anything else.... maybe i should integrate this into a different section. but honestly we'll probably think of more things... like for example, we might need autoclosable. but it depends on how nt4 is. and if we don't we'll probably do resetting instead)
 
 ## Limitations
 
@@ -251,7 +254,7 @@ While unit testing is a great tool, there are some important limitations, especi
 2. resetting shuffleboard...???
     - this will likely be fixed with the next wpilib release se I'm not going to write about it
 
-## Running Tests
+## Running tests
 
 There are two ways to run tests:
 
@@ -261,6 +264,13 @@ There are two ways to run tests:
     - Run the Test Robot Code command from the WPILib menu
 
 ## Examples
+
+### Class structure (write after you have examples)
+
+(this will be sort of explaining the examples)
+
+- static subsystem
+- class vars (can devices)
 
 **coming soon**
 
@@ -272,8 +282,6 @@ There are two ways to run tests:
 5. [WPILib unit testing docs](https://docs.wpilib.org/en/stable/docs/software/wpilib-tools/robot-simulation/unit-testing.html)
 
 # Procedures
-
-**coming soon**
 
 ## When to use unit tests
 
@@ -302,9 +310,14 @@ There are some standards and practices that we try to stick to as a team:
 - delta
     - Each testing class should have a final class variable called delta, who's value the some small double representing acceptable deviation
     - This is generally written as ne-m
-- test naming
-    - insert conventions!
-- Repeated tests
+- naming conventions
+    - naming testing classes
+        - if the class that is being tested is named `XSubsystem.java` or  `X.java`, the testing class should be named `XTest.java`
+        - for example, the testing class for `ClimberSubsystem.java` should be named `ClimberTest.java`
+    - naming tests
+        - names for tests should be clear and informative, and should always end in the word Test
+        - for example, a method that tests the direction of a certain mechanism might be naimed directionTest()
+- repeated tests
     - repeated tests should be use whenever the thing being tested has any significant amount of randomness or variability
     - for example, (*insert good example*)
 - paramaterized tests
@@ -312,3 +325,10 @@ There are some standards and practices that we try to stick to as a team:
     - for example, (*insert good example*)
 - error messages
     - (currently not working great, but if i change that i'll add something here)
+
+NOTES:
+- bullet points or numbers ***choose one***
+- change structure so important things are higher
+- add example code
+- clean up sim
+- add section for problems we've run into?
