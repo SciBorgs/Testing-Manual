@@ -1,19 +1,43 @@
 # Telemetry
 
 ## Table of Contents
-- ### [What is Telemetry?](#what-is-telemetry)
-- ### [Network Tables](#network-tables)
-- ### [On Robot Telemetry](#on-robot-telemetry)
-- ### [Using OBlog](#using-oblog)
+1. ### [Introduction](#introduction)
+    - ### [What is Telemetry?](#what-is-telemetry)
+2. ### [Technicals](#technicals)
+    - ### [Use Cases of Telemetry](#use-cases-of-telemetry)
+        1. #### [Debug Prints](#debug-prints)
+        2. #### [Logging](#logging)
+3. ### [Procedures](#procedures)
+
+<br/>
+
+# Introduction
 
 ## What is Telemetry?
-Telemetry is the gathering, sending, and receiving of data. The data usually includes information about how software is functioning. In the context of robotics, telemetry generally reports on the current state and/or performance of mechanisms, such as the PID values of a PID controller, amongst other relevant data.
+Telemetry involves gathering, sending, and receiving data, which often includes information about how software is functioning. In the context of robotics, telemetry often reports on the current state and/or performance of mechanisms, such as the PID values of a PID controller.
 
-WPILib supports the recording and sending of telemetry data in numerous ways. This guide will provide insight on the NetworkTables protocol, the telemetry methods built into WPILib (ex. `DataLogManager`, `Sendable`), and the usage of OBlog, a logging library. All of these methods incorporate telemetry into your robot code, which will prove to be a essential factor when debugging.
+This guide provides documentation for different telemetry tools, rather than explaining how to use them. The documentation includes simple explanations and code examples to help you quickly integrate telemetry into your robot code, depending on your specific use case. It also provides thorough explanations of each tool.
 
-## Network Tables
-WHAT ARE NETWORK TABLES 
+Telemetry has straightforward applications, so there aren't a wide range of use cases. However, the most common use cases for telemetry are helpful for debugging purposes.
 
-## On-Robot Telemetry
+<br/>
 
-## Using OBlog
+# Technicals
+
+## Common Use Cases of Telemetry
+
+1. ### Debug Prints
+    When you are testing different mechanisms, you may want to print values to the console for debugging purposes, such as values of motors. With the [`Console Viewer`](https://docs.wpilib.org/en/stable/docs/software/vscode-overview/viewing-console-output.html#console-viewer) or [`RioLog`](https://docs.wpilib.org/en/stable/docs/software/vscode-overview/viewing-console-output.html#riolog-vs-code-plugin), both accessable built-in tools, you can easily view console outputs. [Read more about it here](https://docs.wpilib.org/en/stable/docs/software/vscode-overview/viewing-console-output.html#viewing-console-output)
+    
+    [Console Viewer Window](https://docs.wpilib.org/en/stable/_images/console-viewer-window.webp):
+    ![console viewer window](https://docs.wpilib.org/en/stable/_images/console-viewer-window.webp)
+
+    [Riolog Window](https://docs.wpilib.org/en/stable/_images/riolog-window.webp)
+    ![riolog window](https://docs.wpilib.org/en/stable/_images/riolog-window.webp)
+
+    <br/>
+
+2. ### Logging
+
+
+# Procedures
