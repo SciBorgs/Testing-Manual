@@ -1,8 +1,7 @@
-
 # Table of Contents
 
+- [Introduction](#introduction)
 - [Technicals](#technicals)
-  - [Introduction](#introduction)
   - [Setting up JUnit 5](#setting-up-junit-5)
   - [Imports](#imports)
   - [Structure](#structure)
@@ -23,13 +22,13 @@
   - [When to use unit tests](#when-to-use-unit-tests)
   - [Java assert keyword](#java-assert-keyword)
   - [Best practices](#best-practices)
+- [Troubleshooting](#troubleshooting)
 
-
-# Technicals
-
-## Introduction
+# Introduction
 
 Unit testing is a method of testing blocks (or units) of code. JUnit is a common unit testing framework for Java. We will be using JUnit 5.
+
+# Technicals
 
 ## Setting up JUnit 5
 
@@ -45,8 +44,8 @@ Unit testing is a method of testing blocks (or units) of code. JUnit is a common
         testRuntimeOnly 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     }
     ```
-2. Instal VSC extension *Test Runner for Java* (**this isn't strictly necessary with wpilib, but i think it's nice. Should i remove it?**)
-3. Create path `src/test/java`. All tests should be at this address
+2. Create path `src/test/java`. All tests should be at this address
+3. OPTIONAL: Instal VSC extension *Test Runner for Java*
 
 ## Imports
 
@@ -75,8 +74,7 @@ Unit testing is a method of testing blocks (or units) of code. JUnit is a common
     - **link to example coming soon**
 2. Testing Suites
     - Testing Suites are sets of testing classes
-    - **link to example coming soon**
-    - (**i don't think they are currently supported on vscode...**)
+    - VSCode does not yet support Testing Suites, but if that changes they'll be a useful tool
 
 ## Types of methods
 
@@ -221,7 +219,7 @@ The assumeThat method is a combination of an assertion and an assumption.
 
 ## Sim
 
-Robot simulation is the primary method of testing robot code with unit tests. When there isn't a physical robot to test on, we can test subsystems using simulated motors and other sensors/actuators.
+[Robot simulation](insert-link-when-it-exists) is the primary method of testing robot code with unit tests. When there isn't a physical robot to test on, we can test subsystems using simulated motors and other sensors/actuators.
 
 To set up Sim, this line should be included in the BeforeEach method:
 
@@ -230,7 +228,7 @@ AssertTrue(HAL.initialize(500, 0));
 ```
 **is it ever useful to not have that be 500?**
 
-This line (launches sim? insert better explanation...).
+An explanation of HAL can be found [here](insert-link-when-it-exists).
 
 Please read the section on [simulated devices](insert-link-when-it-exists), because they are used in unit testing to make sure your code is acting the way you want it to.
 
@@ -248,19 +246,19 @@ There are a few practices that are necessary to take when writing robot code to 
 
 While unit testing is a great tool, there are some important limitations, especially when it comes to robot code.
 
-1. Sim Accuracy
+1. resetting shuffleboard...???
+    - this will likely be fixed with the next wpilib release se I'm not going to write about it
+2. Sim Accuracy
     - The first and most obvious limitation is that the tests can only be as accurate as sim is
     - There's still a lot of information that you can get, but just because something works in sim, doesn't mean it'll work in the real world
-2. resetting shuffleboard...???
-    - this will likely be fixed with the next wpilib release se I'm not going to write about it
 
 ## Running tests
 
 There are two ways to run tests:
 
-- Running tests using *Test Runner for Java*:
+1. Running tests using *Test Runner for Java*:
     - Either open the VSC testing tab and click run symbol, or go to any test or testing class and click on the little green/red symbol next to it
-- Running test using WPILib
+2. Running test using WPILib
     - Run the Test Robot Code command from the WPILib menu
 
 ## Examples
@@ -285,11 +283,11 @@ There are two ways to run tests:
 
 ## When to use unit tests
 
-Every subsystem should have a testing class dedicated to it, where all of its functionality is tested (to whatever extent possible). (link to example)
+1. Subsytems: Every subsystem should have a testing class dedicated to it, where all of its functionality is tested (to whatever extent possible). (link to example)
 
-Each util classes should have a dedicated testing class as well. (link to example)
+2. Util classes: Each util classes should have a dedicated testing class as well. (link to example)
 
-Not all commands need testing classes, but for more complex commands such as auto routines, have a testing class is advisable. (link to example)
+3. Commands: Not all commands need testing classes, but for more complex commands such as auto routines, have a testing class is advisable. (link to example)
 
 For any class that is to be tested, it is the responsibility of the person who writing it to write the testing class. Ideally, that person would create the testing class when they create the class, and add tests as they add functionality to the class.
 
@@ -312,8 +310,8 @@ There are some standards and practices that we try to stick to as a team:
     - This is generally written as ne-m
 - naming conventions
     - naming testing classes
-        - if the class that is being tested is named `XSubsystem.java` or  `X.java`, the testing class should be named `XTest.java`
-        - for example, the testing class for `ClimberSubsystem.java` should be named `ClimberTest.java`
+        - if the class that is being tested is named `X.java`, the testing class should be named `XTest.java`
+        - for example, the testing class for `Climber.java` should be named `ClimberTest.java`
     - naming tests
         - names for tests should be clear and informative, and should always end in the word Test
         - for example, a method that tests the direction of a certain mechanism might be naimed directionTest()
@@ -326,9 +324,10 @@ There are some standards and practices that we try to stick to as a team:
 - error messages
     - (currently not working great, but if i change that i'll add something here)
 
+# Troubleshooting
+
 NOTES:
 - bullet points or numbers ***choose one***
 - change structure so important things are higher
 - add example code
 - clean up sim
-- add section for problems we've run into?
