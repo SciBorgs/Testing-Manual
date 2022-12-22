@@ -53,6 +53,9 @@
     ![shuffleboard log viewer](https://docs.wpilib.org/en/stable/_images/playback1.webp)
     
 3. ### Dashboards
-    - To simply explain WPILib dashboards, let's use a simple example of a real-world dashboard. The dashboard of a car contains widgets such as an odometer, a coolant and engine oil temperature gauge, a fuel level gauge, dashboard lights that each represent different important information. A WPILib dashboard functions similarly to this.
+    - To simply explain WPILib dashboards, let's use a simple example of a real-world dashboard, such as a car dashboard. The dashboard of a car contains widgets such as an odometer, a coolant and engine oil temperature gauge, a fuel level gauge, dashboard lights that each represent different important information. A WPILib dashboard functions similarly to this.
+    - WPILib dashboards are advantageous because they are able to display data that is sent in code by the user. Some data that can be sent by code are PID values and motor speeds. The dashboards are able to display and represent this data in a clean way using widgets, such as graphs for the PID values in this scenario. Having the ability to read clean data with ease proves to be useful in debugging methods such as tuning speeds.
+    - In addition to displaying data, the dashboards are also able to send information back to code. WPILib dashboards support users to input data onto the dashboard, as well as being able to communicate with the communicate with the [NetworkTables](https://docs.wpilib.org/en/stable/docs/software/networktables/networktables-intro.html#what-is-networktables) protocol (which will be discussed later). This can be advantageous if you are debugging and want to input values into mechanisms without having to change it in code and redeploy every time.
+    - WPILib supports [4 different dashboards](https://docs.wpilib.org/en/stable/docs/software/dashboards/index.html). 
 
 # Procedures
