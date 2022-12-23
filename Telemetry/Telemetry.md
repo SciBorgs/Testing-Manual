@@ -7,7 +7,7 @@
     - ### [Common Use Cases of Telemetry in Robotics](#common-use-cases-of-telemetry-in-robotics)
         1. #### [Print Debugging](#print-debugging)
         2. #### [Logging](#logging)
-        3. #### [Dashboard](#dashboard)
+        3. #### [Dashboard](#dashboards)
 3. ### [Procedures](#procedures)
 
 # Introduction
