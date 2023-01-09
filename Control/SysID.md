@@ -24,15 +24,8 @@ There are different modes for different mechanisms. For now, we will only focus 
 6. Under encoder parameters, set the gearing to whatever the gear ratio is for the mechanism. For counts per revolution set it to the value 8192 if you are using throughbores, or 1 if you are using integrated Neo encoders. If you are using another encoder, look up its counts per revolution.
 7. Under logger go to project parameters. For mechanism, set it to the mechanism you are using. For example, hopper is elevator intake and flywheel is under simple
 8. For unit type use whatever unit you are using and set units per rotation. Use rotation only if the mechanism is 1 to 1. Elsewise use whatever unit that you have associated to this mechanism like meters when running sysID on Drivetrain or angular measurements such as degrees or radians for your turret or hood.
-
- (FLAG: WHAT DO YOU USE OTHERWISE?)
-
-
 9. The Voltage Parameters represent the voltage applied during tests. To set the parameter, slide the slider to whatever voltage ramp rate you want. For precise or very breakable mechanisms set both quasistatic and dynamic step voltage to low values. Low Voltage also tends to be more accurate.
-10. To test on the robot, use an ethernet cable to attach the robot to the laptop from which you will deploy the sysID code. Set logger mode to enabled, then click apply. If NT Connected is shown to the right of it click deploy under team/ip in generator. You will then choose a save location on your computer ideally in the sysID folder in the cloned respository. Now run all your tests once you have finished all your tests you now should click save and now you have your data.
-
- (FLAG: ADD SOME PUNCTUATION I CAN'T READ THIS)
- 
+10. To test on the robot, use an ethernet cable to attach the robot to the laptop from which you will deploy the sysID code. Set logger mode to enabled, then click apply. If NT Connected is shown to the right of it click deploy under team/ip in generator. You will then choose a save location on your computer ideally in the sysID folder in the cloned respository. Now run all your tests, and once you have finished all your tests click save and you should have your data.
 11. To analyze your data go to analyzer, select the sysID data from the folder you stored it in, run the analyzer and get the Feedback and Feedforward analysis. Note that Feedback will yield PID values and Feedforward will yield SVA values.
 12. You now have PID and SVA values!
 
